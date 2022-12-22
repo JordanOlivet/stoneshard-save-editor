@@ -39,7 +39,6 @@
             this.charDataGroupBox = new System.Windows.Forms.GroupBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.characterDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
@@ -64,8 +63,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.numUpDownMoney = new System.Windows.Forms.NumericUpDown();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.InventoryDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.characterDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.charDataGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.characterDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
@@ -76,6 +79,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMoney)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.characterDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // readAllSavesButton
@@ -130,7 +137,6 @@
             // 
             // charDataGroupBox
             // 
-            this.charDataGroupBox.Controls.Add(this.saveButton);
             this.charDataGroupBox.Controls.Add(this.textBox2);
             this.charDataGroupBox.Controls.Add(this.textBox1);
             this.charDataGroupBox.Controls.Add(this.label12);
@@ -164,9 +170,11 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(286, 298);
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveButton.Location = new System.Drawing.Point(12, 366);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(92, 26);
+            this.saveButton.Size = new System.Drawing.Size(809, 26);
             this.saveButton.TabIndex = 40;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -180,10 +188,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(111, 20);
             this.textBox2.TabIndex = 39;
-            // 
-            // characterDataBindingSource
-            // 
-            this.characterDataBindingSource.DataSource = typeof(StoneshardSaveEditor.CharacterData);
             // 
             // textBox1
             // 
@@ -206,7 +210,11 @@
             // 
             this.numericUpDown9.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.characterDataBindingSource, "XP", true));
             this.numericUpDown9.Location = new System.Drawing.Point(104, 279);
-            this.numericUpDown9.Maximum = new decimal(new int[] { 1410065408, 2, 0, 0 });
+            this.numericUpDown9.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
             this.numericUpDown9.Name = "numericUpDown9";
             this.numericUpDown9.Size = new System.Drawing.Size(76, 20);
             this.numericUpDown9.TabIndex = 36;
@@ -219,14 +227,22 @@
             this.numericUpDown8.Name = "numericUpDown8";
             this.numericUpDown8.Size = new System.Drawing.Size(76, 20);
             this.numericUpDown8.TabIndex = 35;
-            this.numericUpDown8.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numericUpDown8.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown8.ValueChanged += new System.EventHandler(this.EnableSaveButton);
             // 
             // numericUpDown7
             // 
             this.numericUpDown7.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.characterDataBindingSource, "StatsPoints", true));
             this.numericUpDown7.Location = new System.Drawing.Point(104, 227);
-            this.numericUpDown7.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.numericUpDown7.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown7.Name = "numericUpDown7";
             this.numericUpDown7.Size = new System.Drawing.Size(76, 20);
             this.numericUpDown7.TabIndex = 34;
@@ -236,7 +252,11 @@
             // 
             this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.characterDataBindingSource, "AbilityPoints", true));
             this.numericUpDown6.Location = new System.Drawing.Point(104, 201);
-            this.numericUpDown6.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.numericUpDown6.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(76, 20);
             this.numericUpDown6.TabIndex = 33;
@@ -246,55 +266,95 @@
             // 
             this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.characterDataBindingSource, "Willpower", true));
             this.numericUpDown5.Location = new System.Drawing.Point(104, 175);
-            this.numericUpDown5.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.numericUpDown5.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(76, 20);
             this.numericUpDown5.TabIndex = 32;
-            this.numericUpDown5.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numericUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown5.ValueChanged += new System.EventHandler(this.EnableSaveButton);
             // 
             // numericUpDown4
             // 
             this.numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.characterDataBindingSource, "Vitality", true));
             this.numericUpDown4.Location = new System.Drawing.Point(104, 149);
-            this.numericUpDown4.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(76, 20);
             this.numericUpDown4.TabIndex = 31;
-            this.numericUpDown4.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numericUpDown4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown4.ValueChanged += new System.EventHandler(this.EnableSaveButton);
             // 
             // numericUpDown3
             // 
             this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.characterDataBindingSource, "Perception", true));
             this.numericUpDown3.Location = new System.Drawing.Point(104, 123);
-            this.numericUpDown3.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(76, 20);
             this.numericUpDown3.TabIndex = 30;
-            this.numericUpDown3.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numericUpDown3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown3.ValueChanged += new System.EventHandler(this.EnableSaveButton);
             // 
             // numericUpDown2
             // 
             this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.characterDataBindingSource, "Agility", true));
             this.numericUpDown2.Location = new System.Drawing.Point(104, 97);
-            this.numericUpDown2.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(76, 20);
             this.numericUpDown2.TabIndex = 29;
-            this.numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown2.ValueChanged += new System.EventHandler(this.EnableSaveButton);
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.characterDataBindingSource, "Strength", true));
             this.numericUpDown1.Location = new System.Drawing.Point(104, 71);
-            this.numericUpDown1.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(76, 20);
             this.numericUpDown1.TabIndex = 28;
-            this.numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.EnableSaveButton);
             // 
             // groupBox1
@@ -408,11 +468,56 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Name";
             // 
+            // label23
+            // 
+            this.label23.Location = new System.Drawing.Point(6, 22);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(70, 19);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "Money";
+            // 
+            // numUpDownMoney
+            // 
+            this.numUpDownMoney.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.InventoryDataBindingSource, "Money", true));
+            this.numUpDownMoney.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.InventoryDataBindingSource, "Money", true));
+            this.numUpDownMoney.Location = new System.Drawing.Point(82, 17);
+            this.numUpDownMoney.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.numUpDownMoney.Name = "numUpDownMoney";
+            this.numUpDownMoney.Size = new System.Drawing.Size(98, 20);
+            this.numUpDownMoney.TabIndex = 28;
+            this.numUpDownMoney.ValueChanged += new System.EventHandler(this.numUpDownMoney_ValueChanged);
+            this.numUpDownMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numUpDownMoney_KeyPress);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.numUpDownMoney);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Location = new System.Drawing.Point(631, 34);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(190, 330);
+            this.groupBox2.TabIndex = 41;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Inventory Data";
+            // 
+            // InventoryDataBindingSource
+            // 
+            this.InventoryDataBindingSource.DataSource = typeof(StoneshardSaveEditor.InventoryData);
+            // 
+            // characterDataBindingSource
+            // 
+            this.characterDataBindingSource.DataSource = typeof(StoneshardSaveEditor.CharacterData);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 373);
+            this.ClientSize = new System.Drawing.Size(833, 404);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.charDataGroupBox);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
@@ -421,10 +526,9 @@
             this.Controls.Add(this.readAllSavesButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
-            this.Text = "Stoneshard Save Editor v.1.1 (Tested with Stoneshard 0.8.0.12)";
+            this.Text = "Stoneshard Save Editor v.1.2 (Tested with Stoneshard 0.8.0.19)";
             this.charDataGroupBox.ResumeLayout(false);
             this.charDataGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.characterDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
@@ -435,8 +539,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownMoney)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.characterDataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button saveButton;
@@ -492,5 +601,9 @@
 		#endregion
 
 		private System.Windows.Forms.BindingSource characterDataBindingSource;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.NumericUpDown numUpDownMoney;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.BindingSource InventoryDataBindingSource;
     }
 }
